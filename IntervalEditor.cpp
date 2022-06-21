@@ -669,7 +669,7 @@ QVector<Interval> IntervalEditor::findLastInterval ( QString path )
     return result;
 }
 
-bool IntervalEditor::importFlatFileMain ( QString flatFileName ) throw ( QString )
+bool IntervalEditor::importFlatFileMain ( QString flatFileName )
 {
     // delete directory tree
     if ( RemoveDirectory ( treeRootDirName ) )
@@ -981,7 +981,7 @@ bool IntervalEditor::RemoveDirectory ( QDir aDir )
     return ( has_err );
 }
 
-bool IntervalEditor::exportFlatFileMain ( QString flatFileName ) throw ( QString )
+bool IntervalEditor::exportFlatFileMain ( QString flatFileName )
 {
     // open flat file
     QFile flatFile ( flatFileName );
@@ -1051,7 +1051,7 @@ void IntervalEditor::exportFlatFileSlot()
     }
 }
 
-bool IntervalEditor::recursiveTreeExport( QVector<Interval>& blockArray, QString currentDirName, QFile& flatFile ) throw (QString)
+bool IntervalEditor::recursiveTreeExport( QVector<Interval>& blockArray, QString currentDirName, QFile& flatFile )
 {
     // get directory listing
     QDir currentDir ( currentDirName );
@@ -1838,7 +1838,7 @@ bool IntervalEditor::hasPrevInterval ( Interval inter )
     return searchPrevInterval ( inter, prevInter );
 }
 
-Interval IntervalEditor::nextInterval ( Interval inter ) throw (bool)
+Interval IntervalEditor::nextInterval ( Interval inter )
 {
     //QVector<Interval> vec;
     Interval nextInter;
@@ -1853,7 +1853,7 @@ Interval IntervalEditor::nextInterval ( Interval inter ) throw (bool)
     }
 }
 
-Interval IntervalEditor::prevInterval ( Interval inter ) throw (bool )
+Interval IntervalEditor::prevInterval ( Interval inter )
 {
     QVector<Interval> vec;
     Interval prevInter;

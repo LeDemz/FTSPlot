@@ -63,8 +63,8 @@ public:
     bool exportFlatFile ( QString flatFileName );
     bool hasNextInterval ( Interval inter );
     bool hasPrevInterval ( Interval inter );
-    Interval nextInterval ( Interval inter ) throw ( bool );
-    Interval prevInterval ( Interval inter ) throw ( bool );
+    Interval nextInterval ( Interval inter );
+    Interval prevInterval ( Interval inter );
     qint64 getXmin();
     qint64 getXmax();
 
@@ -86,7 +86,7 @@ private:
     SimpleViewWidget* svw;
     bool RemoveDirectory ( QDir aDir );
     QString flatFileName;
-    bool recursiveTreeExport ( QVector< FTSPlot::Interval >& blockArray, QString currentDirName, QFile& flatFile ) throw (QString);
+    bool recursiveTreeExport ( QVector< FTSPlot::Interval >& blockArray, QString currentDirName, QFile& flatFile );
     int reqDisplayPower;
     double ymin;
     double ymax;
@@ -118,8 +118,8 @@ private:
     QString fineTuneLow;
     QString fineTuneHigh;
     void trackUpdate();
-    bool importFlatFileMain ( QString flatFileName ) throw ( QString );
-    bool exportFlatFileMain ( QString flatFileName ) throw ( QString );
+    bool importFlatFileMain ( QString flatFileName );
+    bool exportFlatFileMain ( QString flatFileName );
     QString generatePath( Interval inter, int height, QString suffix = "");
     QString genBlockFileName( Interval inter );
     int interval2height( Interval inter );

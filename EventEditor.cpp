@@ -679,7 +679,7 @@ bool EventEditor::importFlatFile ( QString flatFileName )
     return result;
 }
 
-bool EventEditor::importFlatFileMain ( QString flatFileName ) throw ( QString )
+bool EventEditor::importFlatFileMain ( QString flatFileName )
 {
     // delete directory tree
     if ( RemoveDirectory ( treeRootDirName ) )
@@ -896,7 +896,7 @@ bool EventEditor::exportFlatFile ( QString flatFileName )
 }
 
 
-bool EventEditor::exportFlatFileMain ( QString flatFileName ) throw ( QString )
+bool EventEditor::exportFlatFileMain ( QString flatFileName )
 {
     // open flat file
     QFile flatFile ( flatFileName );
@@ -944,7 +944,7 @@ void EventEditor::exportFlatFileSlot()
     }
 }
 
-bool EventEditor::recursiveTreeExport ( QString currentDirName, QFile& flatFile, int height ) throw ( QString )
+bool EventEditor::recursiveTreeExport ( QString currentDirName, QFile& flatFile, int height )
 {
     if ( height == 0 )
     {
@@ -1854,7 +1854,7 @@ bool EventEditor::hasPrevEvent ( quint64 event )
     }
 }
 
-quint64 EventEditor::nextEvent ( quint64 event ) throw ( bool )
+quint64 EventEditor::nextEvent ( quint64 event )
 {
     quint64 nextEvent;
     if ( searchNextEvent ( true, event, &nextEvent, treeRootDirName, TOTALHEIGHT ) )
@@ -1867,7 +1867,7 @@ quint64 EventEditor::nextEvent ( quint64 event ) throw ( bool )
     }
 }
 
-quint64 EventEditor::prevEvent ( quint64 event ) throw ( bool )
+quint64 EventEditor::prevEvent ( quint64 event )
 {
     quint64 prevEvent;
     if ( searchPrevEvent ( true, event, &prevEvent, treeRootDirName, TOTALHEIGHT ) )

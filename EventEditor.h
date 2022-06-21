@@ -62,8 +62,8 @@ public:
     bool exportFlatFile ( QString flatFileName );
     bool hasNextEvent( quint64 event );
     bool hasPrevEvent( quint64 event );
-    quint64 nextEvent( quint64 event ) throw ( bool );
-    quint64 prevEvent( quint64 event ) throw ( bool );
+    quint64 nextEvent( quint64 event );
+    quint64 prevEvent( quint64 event );
     qint64 getXmin();
     qint64 getXmax();
 
@@ -80,7 +80,7 @@ private:
     bool RemoveDirectory ( QDir );
     QString generatePath( quint64 event, int height, QString suffix = "");
     bool generateNodeFiles ( QString baseDirName, QStringList filePath, QStringList oldPath );
-    bool recursiveTreeExport ( QString currentDirName, QFile& flatFile, int height ) throw (QString);
+    bool recursiveTreeExport ( QString currentDirName, QFile& flatFile, int height );
     SimpleViewWidget* svw;
     QCursor DeleteCursor;
     QList<qint64> eventLists[2];
@@ -108,8 +108,8 @@ private:
     bool searchPrevEvent ( bool firstDescent, quint64 event, quint64* prevEvent, QString path, int height );
     bool isEmpty();
     QString fineEditValue;
-    bool importFlatFileMain( QString flatFileName ) throw (QString);
-    bool exportFlatFileMain( QString flatFileName ) throw (QString);
+    bool importFlatFileMain( QString flatFileName );
+    bool exportFlatFileMain( QString flatFileName );
     void fullCacheRebuild ( QString path, int height );
     void partialCacheRebuild ( QStringList pathToBlockFile );
     quint64 value2BlockBegin( quint64 value, int height = 0 );

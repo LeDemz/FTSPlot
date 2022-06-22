@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/FTSPrep.dir/FTSPrepMain.cpp.o  -o FTSPrep  libFTSPlot.a -lQtOpenGL -lQtGui -lQtCore -lGL -lGLU 
